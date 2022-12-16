@@ -20,15 +20,15 @@
 
         <div class="check date__block">
             <label class="check__title" for="firstDate">Оберіть першу дату:</label>
-            <input class="date__block_input" type="date" name="firstDate" id="firstDate" > 
+            <input class="date__block_input" value="2022-12-12" type="date" name="firstDate" id="firstDate" required> 
 
             <label class="check__title" for="lastDate">Оберіть другу дату:</label>
-            <input class="date__block_input" type="date" name="lastDate" id="lastDate" min="firstDate"> 
+            <input class="date__block_input" value="2022-12-15" type="date" name="lastDate" id="lastDate" min="firstDate" required> 
         </div>
 
         <div class="check">
           <div class="period__block">                  
-            <legend class="check__title">Оберіть період:</legend>
+            <legend class="check__title">Оберіть проміжок часу:</legend>
               <div class="radio">
               <input class="period__block_input" type="radio" id="month" name="typePeriod" checked>
               <label class="period__block_name"  for="month">Місяць</label>
@@ -54,7 +54,7 @@
 
           <div class="act__block">                
             <legend class="check__title">Оберіть дії для роботи з часом:</legend>
-            <select class="act__block_select" name="">
+            <select id="act__block" class="act__block_select" name="act__block" required>
               <option value="days">Порахувати кількість днів</option>
               <option value="hours">Порахувати кількість годин</option>
               <option value="minutes">Порахувати кількість хвилин</option>
@@ -62,19 +62,21 @@
             </select>    
           </div>
 
-            <input id="button_count" class="btn btn__sub" type="submit" value="Порахувати">
-        </form>
+            <!-- <input id="button_count1" class="btn btn__sub" type="submit" value="Порахувати"> -->
+          <button id="button_count" class="btn btn__sub">Порахувати</button>
+        
+          </form>
     </section>
 
-    <section class="result">
-      <div class="result_d">
+    <section>
+      <div id="result" class="">
         <div class="resultDate1" id="resultDate1"></div>
         <div id="resultDate2"></div>
         <div id="resultMeasure"></div>
       </div>
     </section>
     <a href="/index.html" class="page_prev">
-      <img src="./img/icon-back.svg" alt="">
+      <img src="./dist/img/icon-back.svg" alt="">
       </a>
   </div>
 </div>
