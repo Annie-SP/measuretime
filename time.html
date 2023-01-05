@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time measure</title>
     <!-- <link rel="stylesheet" href="./styles/styles.css"> -->
-    <link rel="stylesheet" href="./css/styles.min.css">
+    <link rel="stylesheet" href="../css/styles.min.css">
 </head>
 <body class="start">
   <div class="container">
@@ -16,15 +16,17 @@
   </header>
   <main>
     <div id="time-measure__block" class="measure__block">
-      <!-- <form id="countform" class="check__form" action="" method="post"> -->
       <div id="countform" class="check__form">
         <div class="check date__block">
+          <div class="date__block_first">
             <label class="check__title check__title" for="firstDate"> Оберіть першу дату:</label>
             <input class="date__block_input" type="date" name="firstDate" id="firstDate" required> 
-
+          </div>
+          <div  class="date__block_second">
             <label class="check__title check__title" for="lastDate">Оберіть другу дату:</label>
             <input class="date__block_input" type="date" name="lastDate" id="lastDate" required> 
-        </div>
+          </div>
+          </div>
 
         <div class="check">
           <div class="period__block">                  
@@ -58,18 +60,32 @@
               <option value="seconds">Порахувати кількість секунд</option>
             </select>    
           </div>
-
-            <!-- <input id="button_count1" class="btn btn__sub" type="submit" value="Порахувати"> -->
           <button id="button_count" class="btn btn__sub">Порахувати</button>
         </div>
-          <!-- </form> -->
     </section>
 
-    <section>
-      <div id="result" class="">
-        <div class="resultDate1" id="resultDate1"></div>
-        <div id="resultDate2"></div>
-        <div id="resultMeasure"></div>
+    <section id="result__table">
+      <h2 class="result__title">Results of Measure</h2>
+      <div id="result" class="result__block result__table">
+        <div class="result_date1" id="result_date1">
+          <h4 class="result__item">Start Date </h4>
+          <ul class="result__list" id="result_date1__list">
+            <!-- <li class="result__item_start"></li> -->
+          </ul>
+        </div>
+        <div id="result_date2">
+          <h4 class="result__item  result__finish">Finish Date </h4>
+          <ul class="result__list" id="result_date2__list">
+            <!-- <li class="result__item_finish"></li> -->
+          </ul>
+        </div>
+        <div id="result_measure"> 
+          <h4 class="result__item">Result </h4>
+          <ul class="result__list" id="result_measure__list">
+            
+            <!-- <li class="result__item_measure"></li> -->
+          </ul>
+        </div>
       </div>
     </section>
     <a href="/index.html" class="page_prev">
@@ -78,6 +94,6 @@
   </div>
 </div>
     </main>
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
