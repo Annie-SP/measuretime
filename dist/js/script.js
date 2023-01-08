@@ -116,12 +116,26 @@ function createStartDate(event) {
     li.appendChild(document.createTextNode(date1.value));
     liLast.appendChild(document.createTextNode(date2.value));
     liResult.appendChild(document.createTextNode(output));
-    // запихуємо цей елемент списку в список
+    //запихуємо цей елемент списку в список
     resultStartDate.appendChild(li);
     resultLastDate.appendChild(liLast);
     resultMeasure.appendChild(liResult);
+
+
+    if (resultStartDate.childElementCount > 10 && resultLastDate.childElementCount >  10 && resultMeasure.childElementCount > 10){
+        resultStartDate.removeChild(document.getElementById('result_date1__list').getElementsByTagName('li')[0]);
+        console.log(resultStartDate);
+        resultStartDate.appendChild(li);
+
+        resultLastDate.removeChild(document.getElementById('result_date2__list').getElementsByTagName('li')[0]);
+        resultLastDate.appendChild(liLast);
+
+        resultMeasure.removeChild(document.getElementById('result_measure__list').getElementsByTagName('li')[0]);
+        resultMeasure.appendChild(liResult);
+    } 
+
     // викликаємо функцію яка буде додавати завдання до ЛокалСтораджа
-    storeStartDateInLocalStorage(new Date(date1.value), new Date(date2.value), output);
+    storeDatesInLocalStorage(new Date(date1.value), new Date(date2.value), output);
 
     // // очищуємо вміст інпуту для створення завдання
     date1.value = '';
@@ -131,7 +145,7 @@ function createStartDate(event) {
     event.preventDefault();
 }
 
-function storeStartDateInLocalStorage(data1, data2, output ) {
+function storeDatesInLocalStorage(data1, data2, output ) {
     // оголошуємо змінну яка буде використовуватись для списку завдань
     let firstDates;
     let lastDates;
@@ -149,19 +163,27 @@ function storeStartDateInLocalStorage(data1, data2, output ) {
         lastDates = [];
         resultTime = [];
     }
-
+    const li = document.querySelectorAll('li');
     data1 = document.getElementById("firstDate").value;
     data2 = document.getElementById("lastDate").value;
     // output = output;
+        firstDates.push(data1);
+        lastDates.push(data2);
+        resultTime.push(output);
+
     // додаємо до списку нове завдання
-    firstDates.push(data1);
-    lastDates.push(data2);
-    resultTime.push(output);
+       if (firstDates.length > 10 && lastDates.length > 10 && resultTime.length > 10){
+        firstDates.shift();
+        lastDates.shift();
+        resultTime.shift();  
+    } 
     // зберігаємо список завданнь в ЛокалСТорадж
     localStorage.setItem('startDate', JSON.stringify(firstDates));
     localStorage.setItem('lastDate', JSON.stringify(lastDates));
     localStorage.setItem('result', JSON.stringify(resultTime));
+
 }
+
 
 function removeAllTasks() {
     if(confirm('Ви впевнені що хочете видали всі завдання?')){
