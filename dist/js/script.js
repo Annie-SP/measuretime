@@ -38,7 +38,7 @@ buttonClick.addEventListener('click', function (event) {
 
 buttonClean.addEventListener('click', function (event) {
     event.preventDefault();
-    removeAllDatesFromLocalStorage();
+    removeAllTasks();
 });
 
 function loadDates() {
@@ -163,11 +163,20 @@ function storeStartDateInLocalStorage(data1, data2, output ) {
     localStorage.setItem('result', JSON.stringify(resultTime));
 }
 
+function removeAllTasks() {
+    if(confirm('Ви впевнені що хочете видали всі завдання?')){
+        // видаляємо весь контент всередині списку
+            resultMeasure.innerHTML ='';
+            resultStartDate.innerHTML  = '';
+            resultLastDate.innerHTML  = '';
+        // видалити всі елементи з ЛокалСтораджа
+        removeAllDatesFromLocalStorage();
+    }
+}
+
 function removeAllDatesFromLocalStorage() {
     localStorage.clear();
-    resultMeasure ='';
-    resultStartDate = '';
-    resultLastDate = '';
+
 }
 
 
@@ -298,3 +307,4 @@ function timeSelect(){
          }
      }
 }
+
