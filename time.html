@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time measure</title>
     <!-- <link rel="stylesheet" href="./styles/styles.css"> -->
-    <link rel="stylesheet" href="./dist/css/styles.min.css">
+    <link rel="stylesheet" href="../css/styles.min.css">
 </head>
 <body class="start">
   <div class="container">
@@ -19,48 +19,48 @@
       <div id="countform" class="check__form">
         <div class="check date__block">
           <div class="date__block_first">
-            <label class="check__title check__title" for="firstDate"> Оберіть першу дату:</label>
+            <label class="check__title check__title" for="firstDate"> First date:</label>
             <input class="date__block_input" type="date"  id="firstDate" required> 
           </div>
           <div  class="date__block_second">
-            <label class="check__title check__title" for="lastDate">Оберіть другу дату:</label>
+            <label class="check__title check__title" for="lastDate">Last Date:</label>
             <input class="date__block_input" type="date"  id="lastDate" required> 
           </div>
           </div>
 
         <div class="check">
           <div class="period__block">                  
-            <legend class="check__title">Оберіть проміжок часу:</legend>
+            <legend class="check__title">Select a time period:</legend>
             <div class="period__block_buttons">
-                <button id="period__month" class="btn btn__period">Місяць</button>
-                <button id="period__week"  class="btn btn__period">Тиждень</button>
+                <button id="period__month" class="btn btn__period">Month</button>
+                <button id="period__week"  class="btn btn__period">Week</button>
               </div>
           </div>
 
           <div class="period__block">
-            <legend class="check__title">Оберіть дні:</legend>
+            <legend class="check__title">Select type of days:</legend>
 
               <input class="period__block_input" type="radio" id="alldays" value="alldays" name="typeTime" checked >
-              <label class="period__block_name" for="alldays">Всі дні</label>
+              <label class="period__block_name" for="alldays">All days</label>
               
               <input class="period__block_input" type="radio" id="workdays" value="workdays"  name="typeTime">
-              <label class="period__block_name"  for="workdays">Будні дні</label>
+              <label class="period__block_name"  for="workdays">Weekdays</label>
               
               <input class="period__block_input" type="radio" id="weekends" value="weekends"  name="typeTime" >
-              <label class="period__block_name"  for="weekends">Вихідні дні</label>
+              <label class="period__block_name"  for="weekends">Weekends</label>
           </div>
         </div>
 
           <div class="act__block">                
-            <legend class="check__title">Оберіть дії для роботи з часом:</legend>
+            <legend class="check__title">Select time units to count :</legend>
             <select id="act__block" class="act__block_select" name="act__block" required>
-              <option value="days">Порахувати кількість днів</option>
-              <option value="hours">Порахувати кількість годин</option>
-              <option value="minutes">Порахувати кількість хвилин</option>
-              <option value="seconds">Порахувати кількість секунд</option>
+              <option value="days">days</option>
+              <option value="hours">hours</option>
+              <option value="minutes">minutes</option>
+              <option value="seconds">seconds</option>
             </select>    
           </div>
-          <button id="button_count" class="btn btn__sub">Порахувати</button>
+          <button id="button_count" class="btn btn__sub">Count</button>
         </div>
     </section>
 
@@ -87,15 +87,15 @@
           </ul>
         </div>
       </div>
-      <button id="button_clean" class="btn btn__sub">Очистити</button>
+      <button id="button_clean" class="btn btn__sub">Clear</button>
 
     </section>
-    <a href="./dist/index.html" class="page_prev">
-      <img src="./dist/img/icon-back.svg" alt="">
+    <a href="./" class="page_prev">
+      <img src="../img/icon-back.svg" alt="">
       </a>
   </div>
 </div>
     </main>
-    <script src="./dist/js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html> 
